@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#10091f">
+<title>Sutli Bomb — Diwali Surprise</title>
+<style>
+:root{--gold:#ffd778;--orange:#ff8a25;--pink:#ff5a91}*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#fff}body{min-height:100svh;display:grid;place-items:center;overflow:hidden;text-align:center;padding:20px;background:radial-gradient(ellipse at 50% 28%,#51205e 0,#21102f 45%,#080612 100%)}body:before,body:after{content:"✦　　·　　 ✧　　 ·　　 ✦";position:fixed;left:0;width:100%;color:#ffcf72;opacity:.55;letter-spacing:14px;pointer-events:none;animation:twinkle 2s infinite alternate}body:before{top:7%;}body:after{bottom:7%;animation-delay:1s}.wrap{width:min(100%,480px);position:relative;z-index:1}.eyebrow{letter-spacing:.24em;text-transform:uppercase;color:#ffd98b;font-size:11px}.title{font-family:Georgia,serif;font-size:clamp(29px,8vw,43px);margin:12px 0 8px;color:#ffe7a6;text-shadow:0 0 22px #ff9b28}.hint{color:#f5d9ff;margin:0 0 15px;font-size:15px}.bomb-button{border:0;background:transparent;padding:0;cursor:pointer;touch-action:manipulation;color:inherit;filter:drop-shadow(0 12px 24px #ff8c3370);animation:bob 2s ease-in-out infinite}.bomb-button:active{transform:scale(.94)}.bomb-art{width:min(70vw,260px);height:auto;display:block;margin:auto;overflow:visible}.bomb-caption{display:block;color:#ffe7a6;font-size:13px;font-weight:800;letter-spacing:.15em;margin-top:5px}.fuse-spark{transform-origin:190px 40px;animation:spark .42s infinite alternate}.fuse-line{stroke-dasharray:5 4;animation:fuse 1s linear infinite}.tap-note{font-size:12px;color:#dcbfe8;margin-top:15px}.result{display:none;animation:pop .7s cubic-bezier(.2,1.5,.5,1) both}.result.show{display:block}.result h1{font-family:Georgia,serif;font-size:clamp(43px,12vw,62px);line-height:1.02;margin:16px 0;color:#ffe27b;text-shadow:0 0 12px #ff9b22,0 0 35px #ff3b88}.result p{font-size:17px;line-height:1.55;color:#fff0d6;margin:12px auto;max-width:390px}.blessing{color:#ffd98b!important;font-family:Georgia,serif;font-style:italic}.diyas{font-size:42px;letter-spacing:8px;filter:drop-shadow(0 0 10px #ffae39)}.actions{display:grid;gap:10px;margin:18px auto 0;max-width:360px}.action-btn{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;border:1px solid #ffd778;background:linear-gradient(135deg,#176344,#0d382c);color:#fff3cf;padding:14px 16px;border-radius:14px;font-weight:800;font-size:15px;text-decoration:none;cursor:pointer;box-shadow:0 6px 20px #0005}.action-btn.portfolio{background:linear-gradient(135deg,#293d69,#182444)}.share-note{font-size:11px;color:#d8c3e7;margin-top:7px}.again{margin-top:14px;border:1px solid #ffd98b;background:#ffffff12;color:#ffe7a6;padding:12px 22px;border-radius:30px;font-weight:700;font-size:14px}.footer{font-size:11px;color:#c9addb;margin-top:22px}.spark{position:fixed;pointer-events:none;font-size:23px;animation:fly 1.7s ease-out forwards;z-index:5}.flash{position:fixed;inset:0;background:#fff6cf;z-index:4;pointer-events:none;animation:flash .55s ease-out forwards}.firework{position:fixed;z-index:2;pointer-events:none;width:5px;height:5px;border-radius:50%;box-shadow:0 0 8px 3px #ffd36d;animation:firework 1.2s ease-out forwards}.countdown{color:#ffd778;font-weight:800;font-size:13px;letter-spacing:.2em;height:20px;margin-top:8px}@keyframes bob{50%{transform:translateY(-7px) rotate(2deg)}}@keyframes spark{to{opacity:.5;filter:drop-shadow(0 0 12px #ff4b00);transform:scale(1.3)}}@keyframes fuse{to{stroke-dashoffset:-18}}@keyframes twinkle{to{opacity:.95;filter:drop-shadow(0 0 8px #ffb83d)}}@keyframes fly{0%{transform:translate(0,0) scale(.25) rotate(0);opacity:1}100%{transform:translate(var(--x),var(--y)) scale(1.35) rotate(300deg);opacity:0}}@keyframes pop{from{opacity:0;transform:scale(.45)}to{opacity:1;transform:scale(1)}}@keyframes flash{0%{opacity:0}12%{opacity:.95}100%{opacity:0}}@keyframes firework{0%{transform:translate(0,0) scale(.3);opacity:1}100%{transform:translate(var(--x),var(--y)) scale(0);opacity:0}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="eyebrow">A little festive surprise</div>
+  <section id="intro">
+    <div class="title">Ready for a Diwali Blast?</div>
+    <p class="hint">Someone has sent you a special surprise…</p>
+    <button class="bomb-button" id="burst" aria-label="Tap the Sutli Bomb for a Diwali surprise">
+      <svg class="bomb-art" viewBox="0 0 300 260" role="img" aria-label="Illustration of a green rope Sutli Bomb with a lit fuse">
+        <defs><radialGradient id="body" cx="35%" cy="25%"><stop stop-color="#4e9a65"/><stop offset=".55" stop-color="#176344"/><stop offset="1" stop-color="#092f28"/></radialGradient><linearGradient id="band" x2="0" y2="1"><stop stop-color="#e34b3e"/><stop offset="1" stop-color="#8c172b"/></linearGradient><filter id="glow"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+        <path d="M176 83 Q193 49 218 28" fill="none" stroke="#c59a61" stroke-width="13" stroke-linecap="round"/><path class="fuse-line" d="M176 83 Q193 49 218 28" fill="none" stroke="#5b382a" stroke-width="5" stroke-linecap="round"/>
+        <g class="fuse-spark" filter="url(#glow)"><path d="M218 28 L218 8 M218 28 L237 16 M218 28 L239 36 M218 28 L202 13 M218 28 L201 42" stroke="#ffbb35" stroke-width="4" stroke-linecap="round"/><circle cx="218" cy="28" r="7" fill="#fff6bd"/></g>
+        <circle cx="137" cy="143" r="103" fill="url(#body)" stroke="#d8a64e" stroke-width="5"/>
+        <g fill="none" stroke="#69a878" stroke-width="7" opacity=".85"><path d="M49 100 Q137 47 225 100"/><path d="M39 128 Q137 76 235 128"/><path d="M36 158 Q137 108 238 158"/><path d="M48 188 Q137 145 226 188"/><path d="M75 224 Q137 195 199 224"/></g>
+        <path d="M38 125 Q137 103 236 125 L236 171 Q137 196 38 171Z" fill="url(#band)" stroke="#ffd778" stroke-width="3"/>
+        <text x="137" y="151" text-anchor="middle" font-size="22" font-weight="900" letter-spacing="1" fill="#ffe7a6">SUTLI BOMB</text>
+        <path d="M60 137 l8 -10 8 10 -8 10z M198 137 l8 -10 8 10 -8 10z" fill="#ffd778"/>
+      </svg>
+      <span class="bomb-caption">TAP THE BOMB TO LIGHT THE FUSE</span>
+    </button>
+    <div class="countdown" id="countdown"></div>
+    <div class="tap-note">Turn up your sound: fuse, BOOM, festive bells & greeting ✨</div>
+  </section>
+  <section class="result" id="result" aria-live="polite">
+    <div class="diyas">🪔 ✨ 🪔</div>
+    <h1>HAPPY<br>DIWALI!</h1>
+    <p>May your home glow with happiness, your heart with love, and your life with endless prosperity.</p>
+    <p class="blessing">Wishing you and your family a sparkling Diwali! 💛</p>
+    <div class="diyas">🎆 🎇 🎆</div>
+    <div class="actions">
+      <button class="action-btn" id="shareBtn">↗ Share with Friends &amp; Family</button>
+      <a class="action-btn portfolio" href="https://subhendurana1.github.io/" target="_blank" rel="noopener noreferrer">🌐 Visit My Portfolio</a>
+    </div>
+    <div class="share-note" id="shareNote">Share the Diwali surprise with your loved ones 💛</div>
+    <button class="again" id="again">↻ Replay the surprise</button>
+  </section>
+  <div class="footer">Made with festive wishes ❤️</div>
+</main>
+<script>
+const intro=document.getElementById('intro'),result=document.getElementById('result'),countdown=document.getElementById('countdown');let busy=false;
+function confetti(){const bits=['✨','🎉','🎊','🌟','💛','🪔','💥','🌸'];for(let i=0;i<95;i++){const s=document.createElement('i');s.className='spark';s.textContent=bits[Math.floor(Math.random()*bits.length)];s.style.left=(innerWidth/2)+'px';s.style.top=(innerHeight*.45)+'px';s.style.setProperty('--x',(Math.random()-.5)*innerWidth*1.35+'px');s.style.setProperty('--y',(Math.random()-.5)*innerHeight*1.25+'px');s.style.animationDelay=Math.random()*.45+'s';document.body.appendChild(s);setTimeout(()=>s.remove(),2400)}}
+function fireworks(){for(let n=0;n<7;n++){const cx=Math.random()*innerWidth,cy=50+Math.random()*innerHeight*.55;for(let i=0;i<22;i++){const p=document.createElement('i');p.className='firework';p.style.left=cx+'px';p.style.top=cy+'px';const a=Math.PI*2*i/22,r=55+Math.random()*65;p.style.setProperty('--x',Math.cos(a)*r+'px');p.style.setProperty('--y',Math.sin(a)*r+'px');p.style.background=['#ffd36d','#ff659b','#77e6ff','#fff2bd'][n%4];document.body.appendChild(p);setTimeout(()=>p.remove(),1400)}}}
+
+let audioCtx=null, musicTimer=null, musicStep=0;
+function getAudio(){
+  const AC=window.AudioContext||window.webkitAudioContext;
+  if(!AC)return null;
+  if(!audioCtx)audioCtx=new AC();
+  if(audioCtx.state==='suspended')audioCtx.resume();
+  return audioCtx;
+}
+function tone(freq,start,duration,type='sine',gain=0.08,endFreq=null){
+  const ctx=getAudio(); if(!ctx)return;
+  const osc=ctx.createOscillator(), amp=ctx.createGain();
+  osc.type=type; osc.frequency.setValueAtTime(freq,start);
+  if(endFreq)osc.frequency.exponentialRampToValueAtTime(Math.max(1,endFreq),start+duration);
+  amp.gain.setValueAtTime(0.0001,start);
+  amp.gain.exponentialRampToValueAtTime(gain,start+0.025);
+  amp.gain.exponentialRampToValueAtTime(0.0001,start+duration);
+  osc.connect(amp); amp.connect(ctx.destination);
+  osc.start(start); osc.stop(start+duration+0.03);
+}
+function noiseBurst(){
+  const ctx=getAudio(); if(!ctx)return;
+  const len=Math.floor(ctx.sampleRate*.85), buffer=ctx.createBuffer(1,len,ctx.sampleRate);
+  const data=buffer.getChannelData(0);
+  for(let i=0;i<len;i++)data[i]=(Math.random()*2-1)*Math.pow(1-i/len,2.2);
+  const src=ctx.createBufferSource(), filter=ctx.createBiquadFilter(), amp=ctx.createGain();
+  src.buffer=buffer; filter.type='lowpass'; filter.frequency.setValueAtTime(1800,ctx.currentTime);
+  filter.frequency.exponentialRampToValueAtTime(180,ctx.currentTime+.8);
+  amp.gain.setValueAtTime(.0001,ctx.currentTime); amp.gain.exponentialRampToValueAtTime(.5,ctx.currentTime+.012);
+  amp.gain.exponentialRampToValueAtTime(.0001,ctx.currentTime+.82);
+  src.connect(filter); filter.connect(amp); amp.connect(ctx.destination); src.start();
+}
+function fuseSound(){
+  const ctx=getAudio(); if(!ctx)return;
+  for(let i=0;i<5;i++){
+    const t=ctx.currentTime+i*.22;
+    tone(1500+Math.random()*900,t,.055,'triangle',.035,700);
+  }
+}
+function blastSound(){
+  const ctx=getAudio(); if(!ctx)return;
+  noiseBurst();
+  tone(82,ctx.currentTime,.65,'sine',.38,38);
+  tone(145,ctx.currentTime+.02,.28,'triangle',.14,55);
+  for(let i=0;i<7;i++){
+    const t=ctx.currentTime+.12+i*.095;
+    tone(900+Math.random()*1200,t,.16,'triangle',.045,250);
+  }
+}
+function startFestiveMusic(){
+  const ctx=getAudio(); if(!ctx||musicTimer)return;
+  // A light, original bell-like festive motif; no external audio files required.
+  const notes=[523.25,659.25,783.99,659.25,587.33,698.46,880,698.46,523.25,659.25,783.99,1046.5];
+  musicStep=0;
+  musicTimer=setInterval(()=>{
+    if(!audioCtx||audioCtx.state!=='running')return;
+    const f=notes[musicStep%notes.length], t=audioCtx.currentTime;
+    tone(f,t,.42,'sine',.035);
+    tone(f*2,t+.015,.25,'triangle',.012);
+    if(musicStep%4===0)tone(130.81,t,.48,'sine',.018);
+    musicStep++;
+  },360);
+}
+function speakGreeting(){
+  if(!('speechSynthesis' in window))return;
+  window.speechSynthesis.cancel();
+  const voices=window.speechSynthesis.getVoices();
+  const indian=voices.filter(v=>/^en-IN$/i.test(v.lang));
+  const maleHints=/male|ravi|heera|arjun|prabhat|amit|rahul|man/i;
+  const chosen=indian.find(v=>maleHints.test(v.name))||indian[0]||
+    voices.find(v=>/^en-GB$/i.test(v.lang)&&maleHints.test(v.name))||
+    voices.find(v=>/^en/i.test(v.lang)&&maleHints.test(v.name));
+  const msg=new SpeechSynthesisUtterance('Happy Diwali! May your home shine with happiness, love and prosperity. Wishing you and your family a wonderful Diwali!');
+  msg.lang=chosen?chosen.lang:'en-IN';
+  if(chosen)msg.voice=chosen;
+  msg.rate=.88; msg.pitch=.92; msg.volume=1;
+  window.speechSynthesis.speak(msg);
+}
+function blast(){if(busy)return;busy=true;getAudio();fuseSound();startFestiveMusic();countdown.textContent='FUSE LIT…';if(navigator.vibrate)navigator.vibrate([100,60,180]);let n=3;const timer=setInterval(()=>{countdown.textContent=n>0?` ${n}…`: '💥 BOOOOM!';n--;if(n<0){clearInterval(timer);blastSound();const flash=document.createElement('div');flash.className='flash';document.body.appendChild(flash);setTimeout(()=>flash.remove(),600);if(navigator.vibrate)navigator.vibrate([250,80,350]);intro.style.display='none';result.classList.add('show');confetti();fireworks();speakGreeting();setTimeout(fireworks,850);busy=false}},500)}
+document.getElementById('shareBtn').addEventListener('click', async ()=>{
+  const note=document.getElementById('shareNote');
+  const pageUrl=(location.protocol==='http:' || location.protocol==='https:') ? location.href : '';
+  const message='💥 A little Diwali surprise for you! Tap the Sutli Bomb and enjoy the blast. 🪔\n\nMy portfolio: https://subhendurana1.github.io/';
+  const data={title:'Happy Diwali! 🪔',text:message};
+  if(pageUrl) data.url=pageUrl;
+  try{
+    if(navigator.share){await navigator.share(data);note.textContent='Thanks for sharing the Diwali wishes! 💛';}
+    else if(navigator.clipboard && pageUrl){await navigator.clipboard.writeText(message+'\n\n'+pageUrl);note.textContent='Message copied. Paste it into WhatsApp!';}
+    else {note.textContent='To share the interactive surprise, first open it from its public website address.';}
+  }catch(err){if(err.name!=='AbortError')note.textContent='Sharing is unavailable in this browser.';}
+});
+document.getElementById('burst').addEventListener('click',blast);
+document.getElementById('again').addEventListener('click',()=>{if(musicTimer){clearInterval(musicTimer);musicTimer=null;}if('speechSynthesis' in window)window.speechSynthesis.cancel();result.classList.remove('show');intro.style.display='block';countdown.textContent='';busy=false});
+</script>
+</body></html>
